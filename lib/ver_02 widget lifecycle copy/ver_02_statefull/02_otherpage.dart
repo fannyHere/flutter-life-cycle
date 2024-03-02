@@ -1,55 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy/ver_02_statefull/02_every_stateful_ver.dart';
-import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy/ver_02_statefull/02_otherpage.dart';
 
-void main() {
-  runApp(MyApp());
-  print("page main: CONTRSACTOR STATELESS/STATEFULL, diprint pertama kali");
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class otherpage_ver_02 extends StatefulWidget {
+  const otherpage_ver_02({super.key});
+  static const routeName = "/otherpage_ver_02";
 
   @override
+  State<otherpage_ver_02> createState() => _otherpage_ver_02State();
+}
+
+class _otherpage_ver_02State extends State<otherpage_ver_02> {
+  @override
   Widget build(BuildContext context) {
-    print("page main: build ()");
-    return MaterialApp(
-      home: statefull_ver_02(),
-      routes: {
-        statefull_ver_02.routeName: (ctx) => statefull_ver_02(),
-        otherpage_ver_02.routeName: (ctx) => otherpage_ver_02(),
-      },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Other Pageee"),
+      ),
+      body: Center(
+        child: OutlinedButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                context,
+                statefull_ver_02.routeName,
+                arguments: ModalRoute.of(context)!.settings.arguments as int,
+              );
+              //ngebalikin argument yang udah didpaet dibalikin lagi ke counterpage
+            },
+            child: Text("BACK TO COUNTER STATEFUULL")),
+      ),
     );
   }
 }
 
-
-
-// jadiintinya tuh pas di halaman awal counter ==> fungsi (a) berhasil dijalankan semua, tapi ada 2 fungsi (b)yang dijalankan ketika kondisi sebagai berikut:
-// 1.kondisi saat menekan pindah page yang berubah state/kondisi (alias tidak lagi ada counternya) nah 2 fungsi (b) akan muncul pada halaman other page
-// nah, selanjutnyadari halaman other page, saat mengklik back to counter statefull condition itu bakal muncul dari awal fungsi berikut (c).
-
-//fungsi (a):
-// I/flutter ( 9894): CONTRSACTOR STATELESS/STATEFULL, diprint pertama kali
-// I/flutter ( 9894): Constructor STF dijalankan ke-1
-// I/flutter ( 9894): create states PRINT dijalankan ke-2
-// I/flutter ( 9894): initstate()
-// I/flutter ( 9894): didChangeDependencies()
-// I/flutter ( 9894): build() pasti diprint setelah dan nambah nilai klo nambah increment
-
-//fungsi (b):
-// I/flutter ( 9894): deactivate()
-// I/flutter ( 9894): dispose()
-
-//fungsi (c):
-// I/flutter ( 9894): Constructor STF dijalankan ke-1
-// I/flutter ( 9894): create states PRINT dijalankan ke-2
-// I/flutter ( 9894): initstate()
-// I/flutter ( 9894): didChangeDependencies()
-// I/flutter ( 9894): build() pasti diprint setelah dan nambah nilai klo nambah increment
-
-
-//resume life cycle widget so far:
 // Restarted application in 4,087ms.
 // I/flutter ( 9894): CONTRSACTOR STATELESS/STATEFULL, diprint pertama kali
 // I/flutter ( 9894): Constructor STF dijalankan ke-1
