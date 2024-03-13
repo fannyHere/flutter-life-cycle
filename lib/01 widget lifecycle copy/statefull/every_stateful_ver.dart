@@ -34,7 +34,8 @@ class _statefull_ver extends State<statefull_ver> {
 
   @override
   void didUpdateWidget(covariant statefull_ver oldWidget) {
-    print("didUpdateWidget()");
+    print(
+        "didUpdateWidget()"); //supaya pas increment misal awalnya 0 maka nilai awalnya / oldnya 0 terus pas counternya angkanya 3, jadi oldnya 0 newestnya 3
     super.didUpdateWidget(oldWidget);
   }
 

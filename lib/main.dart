@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy/ver_02_statefull/02_every_stateful_ver.dart';
-import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy/ver_02_statefull/02_otherpage.dart';
+import 'package:section_dart_flutter_tambahan/02%20application%20lifecycle/stateful.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,11 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     print("page main: build ()");
     return MaterialApp(
-      home: statefull_ver_02(),
-      routes: {
-        statefull_ver_02.routeName: (ctx) => statefull_ver_02(),
-        otherpage_ver_02.routeName: (ctx) => otherpage_ver_02(),
-      },
+      home: applif_stateful(),
+      //home: statefull_ver_02(),
+      // routes: {
+      //   statefull_ver_02.routeName: (ctx) => statefull_ver_02(),
+      //   otherpage_ver_02.routeName: (ctx) => otherpage_ver_02(),
+      // },
     );
   }
 }

@@ -3,7 +3,8 @@ import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy
 
 class otherpage_ver_02 extends StatefulWidget {
   const otherpage_ver_02({super.key});
-  static const routeName = "/otherpage_ver_02";
+  static const routeName =
+      "/otherpage_ver_02"; //routename samain kaya name class di pageini
 
   @override
   State<otherpage_ver_02> createState() => _otherpage_ver_02State();

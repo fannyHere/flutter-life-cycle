@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:section_dart_flutter_tambahan/ver_02%20widget%20lifecycle%20copy/ver_02_statefull/02_widget/widgetCounters.dart';
 
 class statefull_ver_02 extends StatefulWidget {
-  static const routeName = "/statefull_ver_02_02";
+  static const routeName =
+      "/statefull_ver_02"; //routename samain kaya name class di pageini
 
   statefull_ver_02({Key? key}) : super(key: key) {
     print("++++++++++++++++++++++++++++++++++++++");
@@ -29,6 +30,7 @@ class _statefull_ver_02 extends State<statefull_ver_02> {
   //   //++++gabisa taro sini soalnya yang make context itu didchangedepedencies bukan initstate
   // }
 
+//make ini eror
   // @override
   // void didChangeDependencies() {
   //   final arguments = ModalRoute.of(context)?.settings.arguments;
@@ -39,6 +41,7 @@ class _statefull_ver_02 extends State<statefull_ver_02> {
   // }
 
   @override
+  //ini tuh supaya counter nomor paling akhir tuh pas back ke sini masih sama
   void didChangeDependencies() {
     final int? numberStatePalingAkhir =
         ModalRoute.of(context)!.settings.arguments as int?;
